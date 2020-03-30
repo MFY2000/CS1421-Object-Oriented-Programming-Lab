@@ -6,9 +6,9 @@ Task 1:
 Write a class AreaClass that has three overloaded static methods for calculating the
 areas of the following geometric shapes:
 
-● circles
-● rectangles
-● Cylinders
+circles
+rectangles
+Cylinders
 
 Here are the formulas for calculating the area of the shapes.
 
@@ -44,7 +44,7 @@ class AreaClass{
 }
 
 
-public class Task_1
+public class Practice_Tasks1
 {
 	public static void main(String[] args) {
 	
@@ -57,16 +57,16 @@ public class Task_1
     Scanner Scan = new Scanner(System.in);
     
     //Circle
-    System.out.printf("Enter radius of the circle for the area of circle:   ");
+    System.out.printf("Enter radius of the circle for the area of circle: ");
     radiusCircle = Scan.nextDouble();    
     
-		System.out.println("The area of a circle with radius " + radiusCircle + " is " + AreaClass.Area(radiusCircle));
+		System.out.println("\nThe area of a circle with radius " + radiusCircle + " is " + AreaClass.Area(radiusCircle));
     
     // areaOfRectangle
-    System.out.println("Enter lenght of the rectangle for the area of rectangle:   ");
+    System.out.printf("Enter lenght of the rectangle for the area of rectangle:   ");
     lengthRectangle = Scan.nextInt();    
     
-    System.out.println("Enter width of the rectangle for the area of rectangle:   ");
+    System.out.printf("Enter width of the rectangle for the area of rectangle:   ");
     widthRectangle = Scan.nextInt();    
     
 		System.out.println("The area of a rectangle with a lenght of " + lengthRectangle + " and a width of " + widthRectangle + " is " + AreaClass.Area(widthRectangle, lengthRectangle));
