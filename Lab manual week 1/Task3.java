@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 class Task3
 {
 public static void main(String args[])
