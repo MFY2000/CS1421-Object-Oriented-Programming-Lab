@@ -58,7 +58,7 @@ class Android{
   }
 }
 
-public class Main
+public class Practice_Tasks4
 {
 	public static void main(String[] args) {
 		

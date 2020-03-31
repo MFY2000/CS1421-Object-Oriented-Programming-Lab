@@ -65,7 +65,7 @@ public static double luxuryRate=0.10;
   }
 
 }
-public class Main
+public class Practice_Tasks3
 {
     public static void main(String[] args)
     {

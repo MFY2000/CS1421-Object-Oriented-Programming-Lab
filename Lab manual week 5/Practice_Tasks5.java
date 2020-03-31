@@ -57,7 +57,7 @@ class Bank_software {
     }
 
 }
-    public class Practice_Task5
+    public class Practice_Tasks5
     {
         public static void main(String[] args) {
 
