@@ -52,7 +52,7 @@ public static double luxuryRate=0.10;
 //For example, if the price is 12.567, the method will return 12.57.
   
   private static double roundToNearestvalue(double price){
-    double value = Math.round(price);
+    double value = Math.round(price * 100.0) / 100.0;
     return value;
   }
 
@@ -62,6 +62,16 @@ public static double luxuryRate=0.10;
   
   public static double getBasicRate(){
     return basicRate;
+  }
+
+  public static double checkPassword(int key,double value){
+    if(key == 32423){
+      return roundToNearestvalue(value);
+    }
+    else{
+      System.out.println("Error key is not correct!!!!!!!!!!!!!!!!!!!!!!!!");
+      return 0;
+    }
   }
 
 }
@@ -83,7 +93,7 @@ public class Practice_Tasks3
       tax_computations.changeLuxuryRateTo(rate);
       
       double point = 12.567;
-      // System.out.println("round To Nearest value of "+point+" is"+tax_computations.roundToNearestvalue(point));
+      System.out.println("round To Nearest value of "+point+" is "+tax_computations.checkPassword(32423,point));
       
     }
 }

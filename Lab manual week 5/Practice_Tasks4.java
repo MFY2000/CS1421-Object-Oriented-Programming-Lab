@@ -50,9 +50,9 @@ class Android{
       return false; 
       
       // Check from 2 to n-1 
-    for (int i=2; i < n; i++) 
-        if (n % i == 0) 
-            return false; 
+    for (int i=2; i<n; i++)
+        if (n % i == 0)
+            return false;
 
     return true;   
   }
@@ -67,7 +67,7 @@ public class Practice_Tasks4
 	  System.out.println("The change name is "+number1.getName());
 	  
 		Android number2 = new Android(7);
-		number1.name = "Human";
+		number2.name = "Human";
 	  System.out.println("The change name is "+number1.getName());
 	}
 }
