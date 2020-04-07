@@ -51,7 +51,7 @@ class Instructor extends Person{
     }
 }
 
-public class Practice_Tasks1{
+public class Practice_Tasks_Walkthrough_1{
   public static void main(String[] args)
   {
     Person a = new Person("Anil", 1992);

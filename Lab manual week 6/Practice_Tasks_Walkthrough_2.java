@@ -93,7 +93,7 @@ class StringQuestion extends MultipleChoiceQuestion{
 
 
 
-public class Practice_Tasks2{
+public class Practice_Tasks_Walkthrough_1{
     public static void main(String[] args) {
         MultipleChoiceQuestion Quiz1 = new MultipleChoiceQuestion(true);
         Quiz1.ways();
