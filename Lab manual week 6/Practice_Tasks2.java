@@ -8,6 +8,13 @@ public class Appointment{
     private int year;
     private String description;
 
+    Appointment(int day, int month, int year, String description){
+        this.setDay(day);
+        this.setMonth(month);
+        this.setYear(year);
+
+    }
+
     public int getDay()
     {
         return day;
@@ -38,6 +45,14 @@ public class Appointment{
         this.year = year;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    public String getDescription() {
+        return description;
+    }
+
     boolean occursOn (int day, int month, int year)
     {
         if( (this.day == day) || (this.month == month) || (this.year == year))
@@ -50,10 +65,6 @@ public class Appointment{
         }
     }
 
-    public String toString()
-    {
-        return "Your"+(occursOn(getDay(),getMonth(),getYear()) ? "","doesn't")+" have an appointments";
-    }
 }
 
 
@@ -62,11 +73,10 @@ public class Appointment{
 
 public class Daily extends Appointment{
 
-    private int[] daily;
+    private int daily;
 
-    public Daily(int day, int month, int year, String description)
-    {
-        daily = new int[];
+    public Daily(int day, int month, int year, String description){
+        super(day, month, year, description);
     }
 
     public boolean occursOn (int day)
@@ -77,59 +87,40 @@ public class Daily extends Appointment{
 }
 
 public class Monthly extends Appointment{
+    private int monthly;
 
-
-
-    private ArrayList<Integer>monthly;
-
-    public Monthly(int day, int month, int year, String description)
-    {
-        monthly = new ArrayList<Integer>();
+    public Monthly(int day, int month, int year, String description){
+        super(day, month, year, description);    
     }
 
     public boolean occursOn (int month)
     {
         monthly.add(month);
-        {
-             String whatMonth = "" + monthly.size();
-        }
-
         return true;
     }
-
-
-import java.util.ArrayList;
+}
 
 public class OneTime extends Appointment{
 
-
-
-    private ArrayList<Integer>oneTime;
+    private int oneTime;
     int oneAppointment;
 
     public OneTime(int day, int month, int year, String description)
     {
-        oneTime = new ArrayList<Integer>();
+        super(day, month, year, description);
     }
 
     public boolean occursOn (int day, int month, int year)
     {
         oneTime.add(oneAppointment);
-        {
-             String whatMonthDayYear = "" + oneTime.size();
-        }
-
         return true;
     }
 
 
 
 public class Practice_Tasks2{
-
-
-
-    public static void main(String[] args){
-        Appointment[] appointments = new Appointment [4];
+    public static void main(String args){
+        Appointment appointments = new Appointment [4];
         appointments[0] = new Daily (2, 10, 2018, "Brush your teeth.");
         appointments[1] = new Monthly (2, 10, 2018, "Brush your teeth.");
         appointments[2] = new OneTime (2, 10, 2018, "Brush your teeth.");
