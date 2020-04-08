@@ -127,13 +127,35 @@ public class Practice_Tasks2{
         int way;
 
         do{
-
-            System.out.println("Enter the type of appointments you may have (1 <=> Daily), (2 <=> Monthly), (3 <=> OneTime) ,and(0 <=> Exit)");
+            System.out.println("Enter the type of appointments you may have (1 <=> Daily), (2 <=> Monthly), (3 <=> OneTime), (4 <=> add a appointments), and(0 <=> Exit)");
             way = in.nextInt();
+            int day = 0,month = 0,year = 0;
+            
             if(way == 0){
                 return;
             }
-            int day = 0,month = 0,year = 0;
+            else if(way == 4){
+                String description;
+                System.out.println("So you wants to add appointments");
+                System.out.print("Enter a date (day,month,year) \nDay: ");
+                day = in.nextInt();
+                System.out.print("month: ");
+                month = in.nextInt();
+                System.out.print("year: ");
+                year = in.nextInt();
+
+                System.out.print("Enter the description: ");
+                description = in.nextLine();
+
+                System.out.println("Enter the type of appointments you may have (1 <=> Daily), (2 <=> Monthly), (3 <=> OneTime)");
+                int way2 = in.nextInt();
+
+                Appointment A1 = new Appointment(day,month,year,description);
+
+                System.out.println("All the description are save and appointments is fixed");
+                return;
+            }
+
 
             System.out.print("Enter a date (day"+(way == 1 ?"":",month,year")+") to find in the list of appointments: \nDay: ");
             day = in.nextInt();
@@ -146,7 +168,7 @@ public class Practice_Tasks2{
                 }
             }
 
-            int length = way == 1 ? daily.length : way == 2 ? monthly.length: oneTimes.length;
+            int length = way == 1 ? daily.length : way == 2 ? monthly.length: way == 2 ? oneTimes.length : 1;
 
             for (int i = 0; i < length; i++){
                 switch (way){
