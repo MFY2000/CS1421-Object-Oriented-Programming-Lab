@@ -152,7 +152,8 @@ public class Practice_Tasks2{
 
                 Appointment A1 = new Appointment(day,month,year,description);
 
-                System.out.println("All the description are save and appointments is fixed");
+                
+                
                 return;
             }
 
