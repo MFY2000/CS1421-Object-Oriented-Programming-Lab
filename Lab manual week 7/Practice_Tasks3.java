@@ -21,11 +21,14 @@ public class Practice_Tasks3 {
 
 		System.out.print("Enter a sequence of numbers ending wih 0: ");
         
-        int value2input = scan.nextInt();
+        int value2input=scan.nextInt();
         
         do{
+            if(value2input == 0){
+                break;
+            }
+            sequence.add(value2input);
 			value2input = scan.nextInt();
-			sequence.add(value2input);
 		}while (value2input != 0);
 
         distinctNumber(sequence);
