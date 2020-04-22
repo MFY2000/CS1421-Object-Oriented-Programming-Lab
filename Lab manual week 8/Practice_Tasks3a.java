@@ -1,4 +1,22 @@
-
+/* 
+Task 3:
+Design a Student class.
+It holds data common to all students, (id, name, yearOfAdmisison) and methods to
+calculateCGPA() and toString() Display information, but does not hold all the data needed
+for students of specific majors. For example it can not calculate remaining credit hours for
+students. As the requirements might differ from major to major.
+For example in CsStudent class we have required hours as follows.
+MATH_HOURS = 20; // Math hours
+CS_HOURS = 40; // Comp sci hours
+GEN_ED_HOURS = 60; //General hours
+And hours earned information for every student.
+mathHours, csHours, genEdHours;
+Hours can not be negative or greater than the requirement.
+Design a method to calculateRemainingHours(). Override toString() method to display
+information.
+Design a test class to create an ArrayList of Cs Students and calculate remaining credit hours of
+those students
+*/
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -110,7 +128,7 @@ class testcase2 extends Student{
     }
 }
 
-public class test {
+public class Practice_Tasks3a {
     public static void main(String[] args) {
         
         ArrayList <Student> StudentList;
