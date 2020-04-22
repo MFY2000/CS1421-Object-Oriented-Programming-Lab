@@ -19,6 +19,81 @@ user account if the balance is greater than 15000. For Saving Account 1% of Prof
 from balance of the user. If the profit is greater than 3000.
 Design a Test class that tests both types of account
 */
-public class Practice_Tasks2 {
 
+interface Account {
+    public void deductFees(double Profit);
+}
+
+class test implements Account{
+    public long AccountNumber;
+    public String AccountTitle;
+    public boolean Status;
+    public double balance;
+
+
+    test(long AccountNumber,String AccountTitle,boolean Status,double balance){
+        this.AccountNumber= AccountNumber;
+        this.AccountTitle= AccountTitle;
+        this.Status= Status;
+        this.balance= balance;
+    }
+
+    public void closeAccount(){
+        Status = false;
+        System.out.println("Your Account is closed now with blance: "+balance);
+    }
+
+    public void Display(){
+        System.out.println("Account Number: "+AccountNumber+"\n Account Title: "+AccountTitle+"\n  Account Status: "+Status+"\n  Account Balance: "+balance);
+    }
+
+    public void deductFees(double Profit){
+        if(Profit < 15000){
+            System.out.println("We are deduct Fees of Account: 500 .RS");
+            balance -= 500;
+        }
+        else if(Profit < 3000){
+            System.out.println("We are deduct Fees of Account: 1%("+((Profit*.01))+")");
+            balance -= ((Profit*.01));
+        }
+        Display();
+    }
+}
+
+class test2 {
+    public long AccountNumber;
+    public String AccountTitle;
+    public boolean Status;
+    public double balance;
+
+
+    test2(long AccountNumber,String AccountTitle,boolean Status,double balance){
+        this.AccountNumber= AccountNumber;
+        this.AccountTitle= AccountTitle;
+        this.Status= Status;
+        this.balance= balance;
+    }
+
+    public void closeAccount(){
+        Status = false;
+        System.out.println("Your Account is closed now with blance: "+balance);
+    }
+
+    public void Display(){
+        System.out.println("Account Number: "+AccountNumber+"\n Account Title: "+AccountTitle+"\n  Account Status: "+Status+"\n  Account Balance: "+balance);
+    }
+}
+
+
+public class Practice_Tasks2 {
+    public static void main(String[] args) {
+        // deductFees is define in the class
+        test Account1 = new test(12365,"Saving",true,50000);
+        Account1.deductFees(1501);
+
+
+        // deductFees is not define in the class
+        // test2 Account2 = new test2(12316,"Saving",true,50000);
+        // Account1.deductFees(1500);
+    }
 }
