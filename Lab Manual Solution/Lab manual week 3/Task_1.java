@@ -5,7 +5,7 @@
  Assume a vehicle plate number consists of three uppercase letters followed by three digits. Write
  a program to randomly generate a plate number.
  *******************************************************************************/
-public class Main
+public class Task_1
 {
 public static void main(String[] args) {
 

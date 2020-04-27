@@ -1,17 +1,17 @@
-/******************************************************************************
+/*
  Task 2
  Rainfall
  Write a RainFall class that stores the total rainfall for each of 12 months into an array of doubles.
  The program should return the following:
- ● the total rainfall for the year
- ● the average monthly rainfall
- ● the month with the most rain
- ● the month with the least rain
+the total rainfall for the year
+the average monthly rainfall
+the month with the most rain
+the month with the least rain
  Input Validation: Do not accept negative numbers for monthly rainfall figures.
- *******************************************************************************/
+ */
 import java.util.Scanner;
 
-public class Main
+public class Task_2
 {
     public static void main(String[] args) {
 
@@ -58,10 +58,10 @@ public class Main
         }
 
 
-        System.out.println("● The total rainfall for the year = " + Sum);
-        System.out.println("● the average monthly rainfall = " + Sum/12);
-        System.out.println("● the month with the most rain = " + max_num + " And rain is "+max);
-        System.out.println("● the month with the least rain = " + min_num + " And rain is "+min);
+        System.out.println("The total rainfall for the year = " + Sum);
+        System.out.println("the average monthly rainfall = " + Sum/12);
+        System.out.println("the month with the most rain = " + max_num + " And rain is "+max);
+        System.out.println("the month with the least rain = " + min_num + " And rain is "+min);
 
 
 

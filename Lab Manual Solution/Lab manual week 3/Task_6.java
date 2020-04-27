@@ -10,7 +10,7 @@ capital letter and ends with a full stop. If it doesn’t, the program should ad
 *******************************************************************************/
 import java.util.Scanner;
 
-public class Main
+public class Task_6
 {
 	public static void main(String[] args) {
 
