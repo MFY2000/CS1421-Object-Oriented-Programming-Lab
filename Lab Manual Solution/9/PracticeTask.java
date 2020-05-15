@@ -1,5 +1,5 @@
 // Task 1:
-public class Test1 {
+class Test1 {
     public static void main(String[] args) {
         try {
             System.out.println(1 / 0);
@@ -11,7 +11,7 @@ public class Test1 {
 
 // 2.
 
-public class Test2 {
+class Test2 {
     public static void main(String[] args) {
         int[] list = new int[5];
         try {
@@ -25,7 +25,7 @@ public class Test2 {
 
 // 3.
 
-public class Test3 {
+class Test3 {
     public static void main(String[] args) {
         String s = "abc";
         try {
@@ -40,7 +40,7 @@ public class Test3 {
 // 4.
  
 
-public class Test4 { 
+class Test4 { 
     public static void main(String[] args) {
         Object o = new Object();
         try {
@@ -54,7 +54,7 @@ public class Test4 {
 
 // 5. 
 
-public class Test5 {
+class Test5 {
     public static void main(String[] args) {
         Object o = null;
         try {
@@ -69,7 +69,7 @@ public class Test5 {
 // 6.
 
 
-public class Test6 {
+class Test6 {
     public static void main(String[] args) {
         try {
             System.out.println(1.0 / 0); 
