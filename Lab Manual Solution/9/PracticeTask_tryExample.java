@@ -1,7 +1,13 @@
+
 // Task 1:
 class Test1 {
-    public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args){
+        try {
             System.out.println(1 / 0);
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }
@@ -13,10 +19,10 @@ class Test2 {
         int[] list = new int[5];
         try {
             System.out.println(list[5]);
-        } catch (Exception e) {
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
         }
-    } 
+    }
 }
 
 
@@ -27,7 +33,7 @@ class Test3 {
         String s = "abc";
         try {
             System.out.println(s.charAt(3));
-        } catch (Exception e) {
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -35,9 +41,9 @@ class Test3 {
 
 
 // 4.
- 
 
-class Test4 { 
+
+class Test4 {
     public static void main(String[] args) {
         Object o = new Object();
         try {
@@ -45,7 +51,7 @@ class Test4 {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    } 
+    }
 }
 
 
@@ -69,18 +75,18 @@ class Test5 {
 class Test6 {
     public static void main(String[] args) {
         try {
-            System.out.println(1.0 / 0); 
+            System.out.println(1.0 / 0);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    } 
+    }
 }
 
 
-public class PracticeTask{
-    public static void main(String[] args) throws Exception{
+public class PracticeTask_tryExample{
+    public static void main(String[] args) {
         Test1.main(args);
-        Test2.main(args);        
+        Test2.main(args);
         Test3.main(args);
         Test4.main(args);
         Test5.main(args);
