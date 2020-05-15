@@ -1,20 +1,8 @@
 // Task 1:
 class Test1 {
-    public static void trying(String[] args) {
-        try {
-            System.out.println(1 / 0);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public static void throw(String[] args) throw Exception {
-
+    public static void main(String[] args) throws Exception {
             System.out.println(1 / 0);
     }
-
-    
-
 
 }
 
@@ -90,7 +78,7 @@ class Test6 {
 
 
 public class PracticeTask{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         Test1.main(args);
         Test2.main(args);        
         Test3.main(args);
