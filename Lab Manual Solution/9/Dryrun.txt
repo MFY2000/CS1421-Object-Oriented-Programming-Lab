@@ -1,0 +1,37 @@
+Task 1:
+What RuntimeException will the following programs throw, if any?
+1. public class Test {
+public static void main(String[] args) {
+System.out.println(1 / 0);
+}
+}
+2. public class Test {
+public static void main(String[] args) {
+int[] list = new int[5];
+System.out.println(list[5]);
+} }
+3. public class Test {
+public static void main(String[] args) {
+String s = "abc";
+System.out.println(s.charAt(3));
+} }
+4. public class Test { public static void main(String[] args) {
+Object o = new Object();
+String d = (String)o;
+} }
+5. public class Test {
+public static void main(String[] args) {
+Object o = null;
+System.out.println(o.toString());
+} }
+6. public class Test {
+public static void main(String[] args) {
+System.out.println(1.0 / 0); } }
+
+
+/ by zero
+Index 5 out of bounds for length 5
+String index out of range: 3
+class java.lang.Object cannot be cast to class java.lang.String (java.lang.Object and java.lang.String are in module java.base of loader 'bootstrap')
+null
+Infinity

@@ -33,7 +33,7 @@ class Test3 {
         String s = "abc";
         try {
             System.out.println(s.charAt(3));
-        } catch (Exception e) {
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
         }
     }
