@@ -13,7 +13,7 @@ class Atom{
         this.setProton(proton);
     }
     public void setProton(int proton) throws Exception {
-        if(proton >= 1){
+        if(proton > 1){
             throw new Exception("Proton must be greater than one");
         }
         else {
@@ -24,7 +24,7 @@ class Atom{
         return proton;
     }
     public void setElectron(int electron) throws Exception {
-        if(electron >=1 ){
+        if(electron > 1){
             throw new Exception("electron must be greater than one");
         }
         else {
@@ -71,14 +71,22 @@ public class Question2{
                 if (key == 1) {
                     // The sample of Hydrogen is / for hardcoded value
                     Atom Hydrogen = new Atom(1, 1, 0);
-                    Hydrogen.toString();
+                    System.out.println(Hydrogen.toString());
                 }
                 else if(key == 2){
                     System.out.print("Enter the value of Proton: ");
-                    
+                    temp1 = scan.nextInt();
+                    System.out.print("Enter the value of Electron: ");
+                    temp2 = scan.nextInt();
+                    System.out.print("Enter the value of Neutron: ");
+                    temp3 = scan.nextInt();
+
+                    Atom sample = new Atom(temp1, temp2, temp3);
+                    System.out.println(sample.toString());
                 }
-
-
+                else if(key == 0){
+                    System.exit(1);
+                }
             }while(true);
 
         } catch (Exception e) {

@@ -1,16 +1,23 @@
 package com.company;
 
 interface  Engine{
-
     void accelrate();
     void getfuellevel();
 }
+
 class ElectricEngine implements Engine{
+    public int batterylevel;
+    public boolean tanksExist;
+    public float fuelLevel;
+
     public void accelrate(){
-        System.out.println("Accelrate of the Electric Engine is more efficent");
+        if(batterylevel > 18){
+            System.out.println("Accelrate increased as accelrater press");
+        }
     }
+
     public void getfuellevel(){
-        System.out.println("");
+
     }
 }
 class PetrolEngine implements Engine{
@@ -21,6 +28,7 @@ class PetrolEngine implements Engine{
         System.out.println("not good");
     }
 }
+
 class HybirdEngine implements Engine{
     ElectricEngine eng;
     PetrolEngine png;
@@ -69,15 +77,18 @@ class luxuryCar extends Car{
 }
  class FinalTask1{
     public static void main(String[] args){
-        Engine obj1=new ElectricEngine();
+        Engine obj1 = new ElectricEngine();
         obj1.accelrate();
         obj1.getfuellevel();
-        Engine e1=new HybirdEngine();
+
+        Engine e1 = new HybirdEngine();
         e1.accelrate();
         e1.getfuellevel();
-        Car obj2=new Car(obj1);
+
+        Car obj2 = new Car(obj1);
         obj2.gettrimlevel();
-        Car obj3=new BaseCar(obj1);
+
+        Car obj3 = new BaseCar(obj1);
         obj3.gettrimlevel();
     }
 }
@@ -85,6 +96,6 @@ class luxuryCar extends Car{
 
 public class Question1 {
     public static void main(String[] args) {
-        test.main(args);
+//        test.main(args);
     }
 }
