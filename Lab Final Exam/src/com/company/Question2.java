@@ -1,5 +1,16 @@
 package com.company;
+/*
+Question # 2:
 
+The atoms of different elements have different numbers of protons, neutrons and electrons. Electrons are negatively charged, protons are positively charged, and neutrons have no charge.
+a) Write an atom class that contains:
+(i) fields for storing the numbers of protons, neutrons and electrons with appropriate visibility;
+(ii) setter and getter methods for manipulating these fields, ensuring that the minimum value for electrons and protons is 1, and the minimum value for neutrons is 0;
+(iii) a constructor that initialises new objects of atom to be the smallest element (Hydrogen), for which the number of protons is 1, the number of neutrons is 0, and the number of electrons is 1.
+b) Write a new method for the atom class called isIon() that will return true or false, depending upon whether the atom is an ion. An atom is an ion if it is charged (i.e., if the number of electrons ≠ the number of protons).
+c) Write a new method for the atom class called getAtomicMassNumber that will calculate and return the atomic mass number of the atom. Atomic mass number of an atom (often denoted A) is defined as the number of protons plus the number of neutrons.
+
+ */
 import java.util.Scanner;
 
 class Atom{
@@ -17,7 +28,7 @@ class Atom{
             throw new Exception("Proton must be greater than one");
         }
         else {
-            this.proton=proton;
+            this.proton = proton;
         }
     }
     public int getProton(){

@@ -1,6 +1,7 @@
 package com.company;
 
 /*
+Question # 3
 
 a.	Write a java program that creates a file and name it OOPFinal.txt if it does not exist already. In that file, write 20 integers created randomly using appropriate methods/classes.
 b.	Now read the numbers and display on the screen in ascending order.
@@ -12,8 +13,6 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 class FilingClass{
-
-
     public void writeFile(String FileName) throws IOException {
         File data = new File(FileName);
         if(!data.exists()){
@@ -32,7 +31,7 @@ class FilingClass{
         Scanner Output = new Scanner(new FileReader(file));
 
         System.out.println(Output.nextLine());
-        System.out.println("____________________________________________");
+        System.out.println("__________________");
         while (Output.hasNextLine())
             System.out.println(Output.nextLine());
     }

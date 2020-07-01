@@ -1,13 +1,24 @@
 package com.company;
+/*
 
+A car manufacturer uses Java software to track current vehicles being built. The UML diagram below shows an excerpt of the current software structure. You should assume the presence of other appropriate fields and methods. Each car can be built to one of three trim levels: base, luxury or sport. They can also be configured with an electric or petrol engine.
+a.	Write a program to implement the given scenario.
+b.	The manufacturer decides to offer a vehicle with a hybrid engine that is both an electric engine and a petrol engine. Make changes in code as well as UML (Draw the new UML) to achieve the effect of multiple inheritance for HybridEngine.
+c.	Write a test class to test your system.
+
+ */
 import java.util.Scanner;
 
-abstract class Engine{
+// an abstract class as a Structure class for the other engine
+abstract class Engine{//starting of class
+
+    //Local Varaible
     public int batterylevel;
     public boolean tanksExist;
     public int fuelTank;
     public String type;
 
+    //Getter and Setter Starting
     public int getBatterylevel() {
         return batterylevel;
     }
@@ -40,17 +51,20 @@ abstract class Engine{
         this.type = type;
     }
 
+    //Two abstract class used
     abstract void accelrate();
     abstract void getfuellevel();
 }
 
 class ElectricEngine extends Engine{
+//    Constructor Starting
     public ElectricEngine(int batterylevel, boolean tanksExist) {
         this.setType("ElectricEngine");
         this.setBatterylevel(batterylevel);
         this.setTanksExist(tanksExist);
     }
 
+//  Override methods
     public void accelrate(){
         if(batterylevel > 18){
             System.out.println("Accelrate increased as accelrater press because battery is charge: "+batterylevel);
@@ -60,6 +74,7 @@ class ElectricEngine extends Engine{
         }
     }
 
+//  Override methods
     public void getfuellevel(){
         tanksExist = false;
         System.out.println("Fuel level is:"+batterylevel);
@@ -67,15 +82,14 @@ class ElectricEngine extends Engine{
 }
 
 class PetrolEngine extends Engine{
-
+    //    Constructor Starting
     public PetrolEngine(int fuelTank, boolean tanksExist) {
-        type = "PetrolEngine";
-        this.fuelTank = fuelTank;
-        this.tanksExist = tanksExist;
+        this.setType("PetrolEngine");
+        this.setFuelTank(fuelTank);
+        this.setTanksExist(tanksExist);
     }
 
-    public boolean tanksExist;
-
+    //  Override methods
     public void accelrate(){
         if(fuelTank > 0){
             System.out.println("Accelrate increased as accelrater press because it work on fuel in the car");
@@ -85,6 +99,7 @@ class PetrolEngine extends Engine{
         }
     }
 
+    //  Override methods
     public void getfuellevel(){
         tanksExist = false;
         System.out.println("Fuel level is:"+fuelTank);
@@ -92,7 +107,7 @@ class PetrolEngine extends Engine{
 }
 
 class HybirdEngine extends Engine {
-
+    //Constructor
     public HybirdEngine(int batterylevel, boolean tanksExist, int fuelTank) {
         this.setBatterylevel(batterylevel);
         this.setTanksExist(tanksExist);
@@ -100,6 +115,7 @@ class HybirdEngine extends Engine {
         this.setType("HybirdEngine");
     }
 
+    //  Override methods
     public void accelrate(){
         if(fuelTank > 0){
             System.out.println("Accelrate increased as accelrater press because it work on fuel");
@@ -109,6 +125,7 @@ class HybirdEngine extends Engine {
         }
     }
 
+    //  Override methods
     public void getfuellevel(){
         tanksExist = true;
         System.out.println();
@@ -116,9 +133,19 @@ class HybirdEngine extends Engine {
         System.out.println("Fuel base on battery level is:"+batterylevel);
     }
 }
-
+// end of Engine
+// Start of Car
 abstract class Car{
-    Engine eng;
+    public Engine eng;//
+
+    public Engine getEng() {
+        return eng;
+    }
+
+    public void setEng(Engine eng) {
+        this.eng = eng;
+    }
+
 
     Car(Engine eng){
         this.eng = eng;
@@ -153,13 +180,13 @@ class luxuryCar extends Car{
     }
 }
 
-public class Question1 {
-    public static void main(String[] args) {
+class test{
+    public void workingMethods(){
         Scanner scan = new Scanner(System.in);
         int temp;
         while (true){
             System.out.println("<<<<<<<<<<<<<<<<<<< Welcome to ABC Compouny >>>>>>>>>>>>>>>>>>>>");
-            System.out.print("1 -> Veiw Car\n2 -> Veiw Engine\n0 -> Exit");
+            System.out.print("1 -> Veiw Car\n2 -> Veiw Engine\n0 -> Exit\nPress: ");
             temp = scan.nextInt();
             if(temp == 0){
                 System.exit(1);
@@ -179,8 +206,19 @@ public class Question1 {
                 System.out.println("Select Car and Engine\nHybirdEngine -> 1\nPetrolEngine -> 2\nElectricEngine -> 3");
                 temp = scan.nextInt();
                 Engine engine = (temp == 1 ? new HybirdEngine(100,true,100): temp == 3 ?  new ElectricEngine(100,false): new PetrolEngine(100,true));
+                engine.accelrate();
+                engine.getfuellevel();
             }
-
+            else {
+                System.out.println("Wrong key press!");
+            }
         }
+    }
+}
+
+public class Question1 {
+    public static void main(String[] args) {
+         test obj = new test();
+         obj.workingMethods();
     }
 }
