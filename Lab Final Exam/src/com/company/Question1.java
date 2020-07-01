@@ -76,8 +76,6 @@ class PetrolEngine extends Engine{
 
     public boolean tanksExist;
 
-
-
     public void accelrate(){
         if(fuelTank > 0){
             System.out.println("Accelrate increased as accelrater press because it work on fuel in the car");
@@ -96,10 +94,10 @@ class PetrolEngine extends Engine{
 class HybirdEngine extends Engine {
 
     public HybirdEngine(int batterylevel, boolean tanksExist, int fuelTank) {
-        this.batterylevel = batterylevel;
-        this.tanksExist = tanksExist;
-        this.fuelTank = fuelTank;
-        type = "HybirdEngine";
+        this.setBatterylevel(batterylevel);
+        this.setTanksExist(tanksExist);
+        this.setFuelTank(fuelTank);
+        this.setType("HybirdEngine");
     }
 
     public void accelrate(){
