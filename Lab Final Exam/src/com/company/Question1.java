@@ -1,26 +1,84 @@
 package com.company;
 
-class Car{
+interface  Engine{
 
-    public void getTrimLevel(){
+    void accelrate();
+    void getfuellevel();
+}
+class ElectricEngine implements Engine{
+    public void accelrate(){
+        System.out.println("Accelrate of the Electric Engine is more efficent");
+    }
+    public void getfuellevel(){
+        System.out.println("");
+    }
+}
+class PetrolEngine implements Engine{
+    public void accelrate(){
+        System.out.println("Accelrate your car");
+    }
+    public void getfuellevel(){
+        System.out.println("not good");
+    }
+}
+class HybirdEngine implements Engine{
+    ElectricEngine eng;
+    PetrolEngine png;
 
+    public void accelrate(){
+        System.out.println("Highly power accleration");
+    }
+    public void getfuellevel(){
+        System.out.println("it has both fuel");
     }
 }
 
-class Engine{
-    public void accelerate(){
-
+class Car {
+    Engine eng;
+    Car(Engine eng){
+        this.eng = eng;
     }
-    public void getFuelLevel(){
-
+    void gettrimlevel(){
+        System.out.println("trimlevel is good");
     }
 }
 
-
-
-class test{
-    public static void main(String[] args) {
-
+class BaseCar extends Car {
+    BaseCar(Engine eng){
+        super(eng);
+    }
+    public void gettrimlevel() {
+        System.out.println("this is an base car");
+    }
+}
+class SportsCar extends Car{
+    SportsCar(Engine eng){
+        super(eng);
+    }
+    public void gettrimlevel() {
+        System.out.println("this is an sports car");
+    }
+}
+class luxuryCar extends Car{
+    luxuryCar(Engine eng){
+        super(eng);
+    }
+    public void gettrimlevel() {
+        System.out.println("this is an luxury  car");
+    }
+}
+ class FinalTask1{
+    public static void main(String[] args){
+        Engine obj1=new ElectricEngine();
+        obj1.accelrate();
+        obj1.getfuellevel();
+        Engine e1=new HybirdEngine();
+        e1.accelrate();
+        e1.getfuellevel();
+        Car obj2=new Car(obj1);
+        obj2.gettrimlevel();
+        Car obj3=new BaseCar(obj1);
+        obj3.gettrimlevel();
     }
 }
 
