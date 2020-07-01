@@ -1,10 +1,44 @@
 package com.company;
 
+import java.util.Scanner;
+
 abstract class Engine{
     public int batterylevel;
     public boolean tanksExist;
     public int fuelTank;
     public String type;
+
+    public int getBatterylevel() {
+        return batterylevel;
+    }
+
+    public void setBatterylevel(int batterylevel) {
+        this.batterylevel = batterylevel;
+    }
+
+    public boolean isTanksExist() {
+        return tanksExist;
+    }
+
+    public void setTanksExist(boolean tanksExist) {
+        this.tanksExist = tanksExist;
+    }
+
+    public int getFuelTank() {
+        return fuelTank;
+    }
+
+    public void setFuelTank(int fuelTank) {
+        this.fuelTank = fuelTank;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     abstract void accelrate();
     abstract void getfuellevel();
@@ -12,9 +46,9 @@ abstract class Engine{
 
 class ElectricEngine extends Engine{
     public ElectricEngine(int batterylevel, boolean tanksExist) {
-        type = "ElectricEngine";
-        this.batterylevel = batterylevel;
-        this.tanksExist = tanksExist;
+        this.setType("ElectricEngine");
+        this.setBatterylevel(batterylevel);
+        this.setTanksExist(tanksExist);
     }
 
     public void accelrate(){
@@ -58,7 +92,6 @@ class PetrolEngine extends Engine{
         System.out.println("Fuel level is:"+fuelTank);
     }
 }
-
 
 class HybirdEngine extends Engine {
 
@@ -118,31 +151,38 @@ class luxuryCar extends Car{
         super(eng);
     }
     public void gettrimlevel() {
-        System.out.println("The Sports car Engine: "+eng.type+" ,Battery: "+eng.batterylevel);
+        System.out.println("The Sports car Engine: "+eng.type+" ,Battery: "+eng.batterylevel+"Fuel tank"+eng.fuelTank);
     }
 }
 
 public class Question1 {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int temp;
         while (true){
-            System.out.println("<<<<<<<<<<<<<<<<<<<Welcome to ABC Compouny >>>>>>>>>>>>>>>>>>>>");
+            System.out.println("<<<<<<<<<<<<<<<<<<< Welcome to ABC Compouny >>>>>>>>>>>>>>>>>>>>");
+            System.out.print("1 -> Veiw Car\n2 -> Veiw Engine\n0 -> Exit");
+            temp = scan.nextInt();
+            if(temp == 0){
+                System.exit(1);
+            }
+            else if(temp == 1){
+                System.out.println("\n\n\n\n");
+                System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<< Veiw Car >>>>>>>>>>>>>>>>>>>>>>>");
+                System.out.println("Select Car and Engine\nBase+HybirdEngine -> 1\nSports+HybirdEngine -> 2\nluxuryCar+HybirdEngine -> 3");
+                temp = scan.nextInt();
+                Engine engine = new HybirdEngine(100,true,100);
+                Car car =  temp == 1 ? (new BaseCar(engine)) : temp == 2 ? (new SportsCar(engine)) : (new luxuryCar(engine));
+                car.gettrimlevel();
+            }
+            else if(temp == 2){
+                System.out.println("\n\n\n\n");
+                System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<< Veiw Engine >>>>>>>>>>>>>>>>>>>>>>>");
+                System.out.println("Select Car and Engine\nHybirdEngine -> 1\nPetrolEngine -> 2\nElectricEngine -> 3");
+                temp = scan.nextInt();
+                Engine engine = (temp == 1 ? new HybirdEngine(100,true,100): temp == 3 ?  new ElectricEngine(100,false): new PetrolEngine(100,true));
+            }
 
-            
-
-
-            Engine obj1 = new ElectricEngine();
-            obj1.accelrate();
-            obj1.getfuellevel();
-
-            Engine e1 = new HybirdEngine();
-            e1.accelrate();
-            e1.getfuellevel();
-
-            Car obj2 = new BaseCar(obj1);
-            obj2.gettrimlevel();
-
-            Car obj3 = new BaseCar(obj1);
-            obj3.gettrimlevel();
         }
     }
 }
